@@ -22,7 +22,12 @@
    * @param {*} inventors 
    */
   function addDiscoveries(inventor, discoveries, inventors){
-      
+      let person = inventors.find((persona) => persona.last === inventor);
+      person["discoveries"] = discoveries;
+      console.log(person);
+      inventors[inventors.findIndex((persona) => persona.last === inventor)] = person;
+
+      return inventors;
   }
 
   console.log(addDiscoveries('Einstein', 
